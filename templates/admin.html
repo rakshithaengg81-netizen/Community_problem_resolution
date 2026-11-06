@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>Community Connect - Admin</h2>
+        <a href="{{ url_for('admin_logout') }}">Logout</a>
+    </nav>
+
+    <section class="features">
+
+        <h1>Admin Dashboard</h1>
+        <p>Manage all community complaints.</p>
+        <!-- SEARCH AND FILTER -->
+
+<form method="GET" action="{{ url_for('admin_dashboard') }}"
+      style="margin: 25px auto; max-width: 700px;">
+
+    <input type="text"
+           name="search"
+           placeholder="Search by category, location..."
+           value="{{ search }}"
+           style="padding: 12px; width: 100%; margin-bottom: 12px;">
+
+    <select name="status"
+            style="padding: 12px; width: 100%; margin-bottom: 12px;">
+        <option value="">All Statuses</option>
+        <option value="Pending" {% if selected_status == 'Pending' %}selected{% endif %}>Pending</option>
+        <option value="In Progress" {% if selected_status == 'In Progress' %}selected{% endif %}>In Progress</option>
+        <option value="Resolved" {% if selected_status == 'Resolved' %}selected{% endif %}>Resolved</option>
+    </select>
+
+    <select name="priority"
+            style="padding: 12px; width: 100%; margin-bottom: 12px;">
+        <option value="">All Priorities</option>
+        <option value="High" {% if selected_priority == 'High' %}selected{% endif %}>High</option>
+        <option value="Medium" {% if selected_priority == 'Medium' %}selected{% endif %}>Medium</option>
+        <option value="Low" {% if selected_priority == 'Low' %}selected{% endif %}>Low</option>
+    </select>
+
+    <button type="submit">Search / Filter</button>
+
+    <a href="{{ url_for('admin_dashboard') }}">Clear Filters</a>
+
+</form>
+        <div class="feature-container">
+
+            {% for complaint in complaints %}
+
+            <div class="feature-card">
+
+                <h3>{{ complaint['category'] }}</h3>
+
+                <p><strong>Citizen:</strong> {{ complaint['name'] }}</p>
+
+                <p><strong>Email:</strong> {{ complaint['email'] }}</p>
+
+                <p><strong>Description:</strong>
+                    {{ complaint['description'] }}
+                </p>
+
+                <p><strong>Location:</strong>
+                    {{ complaint['location'] }}
+                </p>
+
+                <p><strong>Priority:</strong>
+                    {{ complaint['priority'] }}
+                </p>
+
+                <p><strong>Current Status:</strong>
+                    {{ complaint['status'] }}
+                </p>
+
+                <form method="POST"
+                      action="{{ url_for('update_status', complaint_id=complaint['id']) }}">
+
+                    <label>Update Status</label>
+
+                    <select name="status">
+                        <option value="Pending"
+                            {% if complaint['status'] == 'Pending' %}selected{% endif %}>
+                            Pending
+                        </option>
+
+                        <option value="In Progress"
+                            {% if complaint['status'] == 'In Progress' %}selected{% endif %}>
+                            In Progress
+                        </option>
+
+                        <option value="Resolved"
+                            {% if complaint['status'] == 'Resolved' %}selected{% endif %}>
+                            Resolved
+                        </option>
+                    </select>
+
+                    <button type="submit">Update Status</button>
+
+                </form>
+
+            </div>
+
+            {% else %}
+
+            <p>No complaints have been submitted yet.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</body>
+</html>

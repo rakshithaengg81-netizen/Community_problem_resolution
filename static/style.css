@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f8fc;
+    color: #243047;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+}
+
+.navbar h2 {
+    color: #176b52;
+}
+
+.navbar a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #243047;
+    font-weight: bold;
+}
+
+.nav-btn {
+    background: #176b52;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+/* Homepage Hero Section */
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background: linear-gradient(120deg, #d9f3e7, #e8f0ff);
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    color: #176b52;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 550px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: #176b52;
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+/* Features Section */
+
+.features {
+    text-align: center;
+    padding: 55px 8%;
+}
+
+.features h2 {
+    margin-bottom: 35px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 270px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: #176b52;
+}
+
+.feature-card p {
+    line-height: 1.6;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #176b52;
+    color: white;
+}
+
+/* Registration and Login Pages */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #d9f3e7, #e8f0ff);
+    padding: 20px;
+}
+
+.auth-box {
+    background: white;
+    width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.auth-box h1 {
+    color: #176b52;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.auth-box > p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.auth-box label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 25px;
+    background: #176b52;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-box button:hover {
+    background: #10543f;
+}
+
+.auth-link {
+    margin-top: 20px;
+}
+
+.auth-link a,
+.back-link {
+    color: #176b52;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Report Form */
+
+.auth-box select,
+.auth-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.auth-box textarea {
+    resize: vertical;
+}
+/* Dashboard Improvements */
+
+.features {
+    padding: 45px 8%;
+}
+
+.features > h1 {
+    color: #176b52;
+    margin-bottom: 12px;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.feature-card h1 {
+    color: #176b52;
+    font-size: 32px;
+    margin-top: 12px;
+}
+
+button {
+    background: #176b52;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #10543f;
+}
+
+select, input, textarea {
+    font-family: Arial, sans-serif;
+}
+
+a {
+    transition: 0.3s;
+}

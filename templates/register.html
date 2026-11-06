@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Community Connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-box">
+
+            <h1>Create Account</h1>
+            <p>Join your community and make a difference.</p>
+
+            <form method="POST" action="{{ url_for('register') }}">
+
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create password" required>
+
+                <button type="submit">Register</button>
+
+            </form>
+
+            <p class="auth-link">
+                Already have an account?
+                <a href="{{ url_for('login') }}">Login</a>
+            </p>
+
+            <a href="{{ url_for('home') }}" class="back-link">Back to Home</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

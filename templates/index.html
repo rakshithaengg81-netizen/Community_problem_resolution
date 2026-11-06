@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>Community Connect</h2>
+
+        <div>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}" class="nav-btn">Register</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Make Your Community<br>Better Together.</h1>
+
+            <p>
+                Report local problems, connect with authorities,
+                and help create a cleaner and safer community.
+            </p>
+
+            <a href="{{ url_for('register') }}" class="primary-btn">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>How It Works</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <h3>📢 Report Issues</h3>
+                <p>Report problems like potholes, garbage and water leakage.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📍 Track Issues</h3>
+                <p>Track your complaints and know their current status.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>✅ Get Solutions</h3>
+                <p>Help authorities resolve community problems faster.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Community Connect | Together for a Better Community</p>
+    </footer>
+
+</body>
+</html>

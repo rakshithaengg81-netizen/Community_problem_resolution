@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Problem</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>Community Connect</h2>
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </nav>
+
+    <div class="auth-container">
+
+        <div class="auth-box">
+
+            <h1>Report a Problem</h1>
+
+            <p>Help us make your community better.</p>
+
+            <form method="POST" action="{{ url_for('report') }}">
+
+                <label>Problem Category</label>
+
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Garbage">Garbage</option>
+                    <option value="Road Damage">Road Damage</option>
+                    <option value="Water Leakage">Water Leakage</option>
+                    <option value="Street Light">Street Light</option>
+                    <option value="Drainage">Drainage</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>Problem Description</label>
+
+                <textarea
+                    name="description"
+                    placeholder="Describe the problem..."
+                    rows="4"
+                    required
+                ></textarea>
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Enter problem location"
+                    required
+                >
+
+                <button type="submit">Submit Complaint</button>
+
+            </form>
+
+            <a href="{{ url_for('dashboard') }}" class="back-link">
+                Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

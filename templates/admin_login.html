@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Community Connect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-box">
+
+            <h1>Admin Login</h1>
+            <p>Login to manage community complaints.</p>
+
+            <form method="POST" action="{{ url_for('admin_login') }}">
+
+                <label>Email Address</label>
+                <input type="email" name="email"
+                       placeholder="Enter admin email" required>
+
+                <label>Password</label>
+                <input type="password" name="password"
+                       placeholder="Enter admin password" required>
+
+                <button type="submit">Login as Admin</button>
+
+            </form>
+
+            <a href="{{ url_for('home') }}" class="back-link">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

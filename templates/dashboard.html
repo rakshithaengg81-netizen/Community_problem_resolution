@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Community Connect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>Community Connect</h2>
+
+        <div>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome, {{ name }}!</h1>
+            <div class="feature-container">
+
+    <div class="feature-card">
+        <h3>Total Complaints</h3>
+        <h1>{{ total }}</h1>
+    </div>
+
+    <div class="feature-card">
+        <h3>Pending</h3>
+        <h1>{{ pending }}</h1>
+    </div>
+
+    <div class="feature-card">
+        <h3>In Progress</h3>
+        <h1>{{ in_progress }}</h1>
+    </div>
+
+    <div class="feature-card">
+        <h3>Resolved</h3>
+        <h1>{{ resolved }}</h1>
+    </div>
+
+</div>
+            <p>
+                Together, let's make our community
+                cleaner, safer and better.
+            </p>
+
+            <a href="{{ url_for('report') }}" class="primary-btn">
+                + Report a Problem
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Your Reported Problems</h2>
+
+        {% if complaints %}
+
+        <div class="feature-container">
+
+            {% for complaint in complaints %}
+
+            <div class="feature-card">
+                <h3>{{ complaint['category'] }}</h3>
+
+                <p>{{ complaint['description'] }}</p>
+
+                <p><strong>Location:</strong> {{ complaint['location'] }}</p>
+
+                <p><strong>Priority:</strong> {{ complaint['priority'] }}</p>
+
+                <p><strong>Status:</strong> {{ complaint['status'] }}</p>
+
+                <p><strong>Reported:</strong> {{ complaint['created_at'] }}</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <p>You haven't reported any problems yet.</p>
+
+        {% endif %}
+
+    </section>
+
+</body>
+</html>
